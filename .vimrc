@@ -92,3 +92,11 @@ au Syntax * RainbowParenthesesLoadBraces
 let g:solarized_termtrans = 1
 set background=dark
 colorscheme solarized
+
+
+
+augroup vimrc_autocmds
+  autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
+  autocmd BufEnter * match OverLength /\%74v.*/
+augroup END
+
