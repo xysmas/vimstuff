@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo linking repo vimrc to the .vimrc init file
-if [ -d "$HOME/vimstuff" ]
+if [ -d "$HOME/vimstuff" ]; then
 	ln -sf ~/vimstuff/.vimrc ~/.vimrc 
 	cd $HOME/vimstuff
 	echo cloning repos
