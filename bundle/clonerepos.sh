@@ -12,3 +12,5 @@ git clone https://github.com/tpope/vim-fugitive.git
 git clone https://github.com/vim-scripts/Conque-Shell.git
 git clone https://github.com/tpope/vim-markdown.git
 git clone https://github.com/altercation/vim-colors-solarized.git
+git clone https://github.com/Valloric/YouCompleteMe.git
+git submodule update --init --recursive
