@@ -6,9 +6,14 @@ set hlsearch
 set showmatch
 set autoindent
 set smartindent
+set cindent
 set mouse=a
 set nocompatible
 set paste 
+
+set formatoptions+=t
+set tw=79
+
 " Map auto complete of (, ", ', [
  inoremap $1 ()<esc>i
  inoremap $2 []<esc>i
