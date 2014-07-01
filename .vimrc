@@ -1,13 +1,14 @@
 set nu
 set incsearch
-set tabstop=3
-set shiftwidth=3
+set tabstop=4
+set shiftwidth=4
 set hlsearch
 set showmatch
 set autoindent
 set smartindent
 set mouse=a
 set nocompatible
+set paste 
 " Map auto complete of (, ", ', [
  inoremap $1 ()<esc>i
  inoremap $2 []<esc>i
