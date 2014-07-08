@@ -9,7 +9,6 @@ set smartindent
 set cindent
 set mouse=a
 set nocompatible
-set paste 
 
 set formatoptions+=t
 set tw=79
@@ -95,8 +94,8 @@ colorscheme solarized
 
 
 
-augroup vimrc_autocmds
-  autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
-  autocmd BufEnter * match OverLength /\%74v.*/
-augroup END
+"augroup vimrc_autocmds
+"  autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
+"  autocmd BufEnter * match OverLength /\%74v.*/
+"augroup END
 
