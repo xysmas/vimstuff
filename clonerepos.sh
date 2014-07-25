@@ -3,7 +3,12 @@
 echo linking repo vimrc to the .vimrc init file
 if [ -d "$HOME/vimstuff" ]; then
 	ln -sf ~/vimstuff/.vimrc ~/.vimrc 
-	cd $HOME/vimstuff
+	if [-d "$HOME/vimstuff" ]; then
+		cd $HOME/vimstuff/bundle
+	else
+		mkdir $HOME/vimstuff/bundle
+		cd $HOME/vimstuff/bundle
+	fi
 	echo cloning repos
 	git clone https://github.com/kien/rainbow_parentheses.vim.git
 	git clone https://github.com/Lokaltog/vim-easymotion.git
