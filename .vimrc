@@ -80,7 +80,8 @@ endfunction
 map <F6> :call InsQuickComment()<CR><CR>
 map <F7> :call RemQuickComment()<CR><CR>
 
-execute pathogen#infect()
+runtime autoload/pathogen.vim
+execute pathogen#infect('$HOME/vimstuff/bundle/{}')
 
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
