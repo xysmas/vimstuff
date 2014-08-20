@@ -93,6 +93,8 @@ let g:solarized_termtrans = 1
 set background=dark
 colorscheme solarized
 
+let g:EclimCompletionMethod = 'omnifunc'
+
 
 
 "augroup vimrc_autocmds
