@@ -19,6 +19,6 @@ if [ -d "$HOME/vimstuff" ]; then
 	git clone https://github.com/tpope/vim-markdown.git
 	git clone https://github.com/altercation/vim-colors-solarized.git
 	git clone https://github.com/Valloric/YouCompleteMe.git
-	cd $HOME/vimstuff/YouCompleteMe
+	cd $HOME/vimstuff/bundle/YouCompleteMe
 	git submodule update --init --recursive
 fi
