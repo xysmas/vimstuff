@@ -44,6 +44,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'lervag/vim-latex'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'bling/vim-airline'
 
 
 " All of your Plugins must be added before the following line
@@ -107,3 +108,5 @@ endfunction
 map <Leader>lx :<C-U>call CompileXeTex()<CR>
 
 nnoremap ; :
+" for airline to show up at first open
+set laststatus=2
