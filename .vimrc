@@ -19,75 +19,47 @@ set magic
 set formatoptions+=t
 set tw=79
 
-" Map auto complete of (, ", ', [
- "inoremap $1 ()<esc>i
- "inoremap $2 []<esc>i
- "inoremap $3 {}<esc>i
- "inoremap $4 {<esc>o}<esc>O
- "inoremap $q ''<esc>i
- "inoremap $e ""<esc>i
- "inoremap $t <><esc>i
+filetype off
+" set the runtime path to include Vundle and initialize
+
+set rtp+=~/vimstuff/bundle/Vundle.vim
+call vundle#begin()
+" " alternatively, pass a path where Vundle should install plugins
+call vundle#begin('~/vimstuff/bundle')
+"
+" " let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'elzr/vim-json'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-repeat'
+Plugin 'Raimondi/delimitMate'
+Plugin 'lervag/vim-latex'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'kien/rainbow_parentheses.vim'
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 " Enable syntax-highlighting.
 if has("syntax")
   syntax on
 endif
-if has("autocmd")
-  " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
-  filetype plugin indent on
-  " ...
-endif
 
 "Press Space to turn off highlighting and clear any message already displayed.
-nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 
-
-"from andree" 
-function InsQuickComment()
-	if &filetype=="c" 
-		call setline(line("."), "/*" . getline(line(".")) . "*/")
-	elseif &filetype=="c++" || &filetype=="java" || &filetype=="cpp" || &filetype=="cc"
-		call setline(line("."), "//" . getline(line(".")))
-        elseif &filetype=="bib"
-                call setline(line("."), "@Comment - " . getline(line(".")))
-        elseif &filetype=="tex"
-                call setline(line("."), "%" . getline(line(".")))
-	elseif &filetype=="sml"
-		call setline(line("."), "(* " . getline(line(".")) . " *)")
-	elseif &filetype=="html" || &filetype=="xml" || &filetype=="dtd"
-		call setline(line("."), "<!--" . getline(line(".")) . "-->")
-	else
-		call setline(line("."), "#" . getline(line(".")))
-	endif
-endfunction
-		
-function RemQuickComment()
-	if &filetype=="c"
-		call setline(line("."),substitute(substitute(getline(line(".")), "^/[*]", "", ""), "[*]/$", "", ""))
-	elseif &filetype=="c++" || &filetype=="java" || &filetype=="cpp"
-		call setline(line("."),substitute(getline(line(".")), "^//", "", ""))
-        elseif &filetype=="bib"
-                call setline(line("."),substitute(getline(line(".")), "^@Comment - ", "", ""))
-        elseif &filetype=="tex"
-                call setline(line("."),substitute(getline(line(".")), "^%", "", ""))
-	elseif &filetype=="sml" 
-		call setline(line("."),substitute(substitute(getline(line(".")),"^([*]", "", ""), "[*])$", "",""))
-	elseif &filetype=="html" || &filetype=="xml" || &filetype=="dtd"
-		call setline(line("."),substitute(substitute(getline(line(".")),"^<!--", "", ""), "-->$", "",""))
-	else
-		call setline(line("."),substitute(getline(line(".")), "^#", "", ""))
-	endif
-endfunction
-
-map <F6> :call InsQuickComment()<CR><CR>
-map <F7> :call RemQuickComment()<CR><CR>
-
-runtime autoload/pathogen.vim
-execute pathogen#infect('$HOME/vimstuff/bundle/{}')
+" runtime autoload/pathogen.vim
+" execute pathogen#infect('$HOME/vimstuff/bundle/{}')
 
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
