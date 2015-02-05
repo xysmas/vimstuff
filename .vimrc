@@ -56,6 +56,8 @@ if has("syntax")
 endif
 
 "Press Space to turn off highlighting and clear any message already displayed.
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
 
 
 " runtime autoload/pathogen.vim
