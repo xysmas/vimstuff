@@ -110,3 +110,9 @@ map <Leader>lx :<C-U>call CompileXeTex()<CR>
 nnoremap ; :
 " for airline to show up at first open
 set laststatus=2
+
+" force python to use tabs of two spaces
+au FileType python setl sw=2 sts=2 et
+" makes backspace work correctly
+set backspace=indent,eol,start
+
