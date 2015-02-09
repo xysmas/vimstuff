@@ -10,4 +10,5 @@ if [ -d "$HOME/vimstuff" ]; then
 		mkdir $HOME/vimstuff/bundle
 		cd $HOME/vimstuff/bundle
 	fi
+        git clone https://github.com/gmarik/Vundle.vim.git
 fi

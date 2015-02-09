@@ -3,8 +3,8 @@ set nu
 set incsearch
 set hlsearch
 set showmatch
-set softtabstop=2 
-set shiftwidth=2 
+set softtabstop=2
+set shiftwidth=2
 set expandtab
 set modeline
 set autoindent
@@ -45,11 +45,20 @@ Plugin 'lervag/vim-latex'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'bling/vim-airline'
+Bundle 'Lokaltog/vim-easymotion'
+
 
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+autocmd filetype python set expandtab
+autocmd filetype python set sw=2
+autocmd filetype python set softtabstop=2
+autocmd filetype python set smarttab
+" makes backspace work correctly
+set backspace=indent,eol,start
+
 
 " Enable syntax-highlighting.
 if has("syntax")
@@ -58,8 +67,6 @@ endif
 
 "Press Space to turn off highlighting and clear any message already displayed.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
-
-
 
 " runtime autoload/pathogen.vim
 " execute pathogen#infect('$HOME/vimstuff/bundle/{}')
@@ -93,10 +100,12 @@ set wildignore+=*.png,*.jpg,*.jpeg,*.gif,*.mp3
 set wildignore+=*.sw?
 
 
-function SetXeTex()
-  let g:Tex_CompileRule_pdf = 'xelatex -src-specials -interaction=nonstopmode $*'
-endfunction
-map <Leader>lx :<C-U>call SetXeTex()<CR>
+" vim-latex stuff
+" this one sets leader+x to compile with xelatex
+" function SetXeTex()
+  " let g:Tex_CompileRule_pdf = 'xelatex -src-specials -interaction=nonstopmode $*'
+" endfunction
+" map <Leader>lx :<C-U>call SetXeTex()<CR>
 
 
 function CompileXeTex()
@@ -107,12 +116,30 @@ function CompileXeTex()
 endfunction
 map <Leader>lx :<C-U>call CompileXeTex()<CR>
 
+" huge timesaver
 nnoremap ; :
+"
 " for airline to show up at first open
 set laststatus=2
+"
+" quick switching between windows
+set wmw=0
+nmap <c-h> <c-w>h<c-w><Bar>
+nmap <c-l> <c-w>l<c-w><Bar>
 
-" force python to use tabs of two spaces
-au FileType python setl sw=2 sts=2 et
-" makes backspace work correctly
-set backspace=indent,eol,start
+"
+set splitbelow
+set splitright
 
+" Visualize tabs, trailing whitespaces and funny characters
+" http://www.reddit.com/r/programming/comments/9wlb7/proggitors_do_you_like_the_idea_of_indented/c0esam1
+" https://wincent.com/blog/making-vim-highlight-suspicious-characters
+set list
+set listchars=nbsp:¬,tab:»·,trail:·
+
+" Breaking lines with \[enter] without having to go to insert mode
+nmap <leader><cr> i<cr><Esc>
+
+
+" options for airlinelet
+let g:airline_powerline_fonts = 1
