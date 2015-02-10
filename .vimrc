@@ -143,3 +143,5 @@ nmap <leader><cr> i<cr><Esc>
 
 " options for airlinelet
 let g:airline_powerline_fonts = 1
+" spelling 
+setlocal spell spelllang=en_us
