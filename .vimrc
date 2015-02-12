@@ -45,7 +45,8 @@ Plugin 'lervag/vim-latex'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'bling/vim-airline'
-Bundle 'Lokaltog/vim-easymotion'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'scrooloose/syntastic'
 
 
 
@@ -53,8 +54,8 @@ Bundle 'Lokaltog/vim-easymotion'
 call vundle#end()            " required
 filetype plugin indent on    " required
 autocmd filetype python set expandtab
-autocmd filetype python set sw=2
-autocmd filetype python set softtabstop=2
+autocmd filetype python set sw=4
+autocmd filetype python set softtabstop=4
 autocmd filetype python set smarttab
 " makes backspace work correctly
 set backspace=indent,eol,start
@@ -143,5 +144,14 @@ nmap <leader><cr> i<cr><Esc>
 
 " options for airlinelet
 let g:airline_powerline_fonts = 1
-" spelling 
+" spelling
 setlocal spell spelllang=en_us
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
