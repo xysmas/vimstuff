@@ -26,8 +26,9 @@ set rtp+=~/vimstuff/bundle/Vundle.vim
 call vundle#begin()
 " " alternatively, pass a path where Vundle should install plugins
 call vundle#begin('~/vimstuff/bundle')
-"
-" " let Vundle manage Vundle, required
+
+
+" let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
 " The following are examples of different formats supported.
@@ -40,13 +41,15 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-repeat'
-Plugin 'Raimondi/delimitMate'
 Plugin 'lervag/vim-latex'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'bling/vim-airline'
 Plugin 'Lokaltog/vim-easymotion'
+Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-liquid'
+Plugin 'PProvost/vim-markdown-jekyll'
 
 
 
@@ -57,6 +60,7 @@ autocmd filetype python set expandtab
 autocmd filetype python set sw=4
 autocmd filetype python set softtabstop=4
 autocmd filetype python set smarttab
+
 " makes backspace work correctly
 set backspace=indent,eol,start
 
@@ -109,13 +113,6 @@ set wildignore+=*.sw?
 " map <Leader>lx :<C-U>call SetXeTex()<CR>
 
 
-function CompileXeTex()
-  let oldCompileRule=g:Tex_CompileRule_pdf
-  let g:Tex_CompileRule_pdf = 'xelatex  -src-specials -interaction=nonstopmode $*'
-  call Tex_RunLaTeX()
-  let g:Tex_CompileRule_pdf=oldCompileRule
-endfunction
-map <Leader>lx :<C-U>call CompileXeTex()<CR>
 
 " huge timesaver
 nnoremap ; :
@@ -155,3 +152,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+
+" Sets folds to open at start
+set foldlevelstart=20
