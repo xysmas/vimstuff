@@ -50,6 +50,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-liquid'
 " Plugin 'PProvost/vim-markdown-jekyll'
 Plugin 'jtratner/vim-flavored-markdown'
+Plugin 'derekwyatt/vim-scala'
+
 
 
 " All of your Plugins must be added before the following line
