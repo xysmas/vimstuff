@@ -40,7 +40,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-repeat'
-Plugin 'lervag/vim-latex'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'bling/vim-airline'
@@ -51,6 +50,7 @@ Plugin 'tpope/vim-liquid'
 " Plugin 'PProvost/vim-markdown-jekyll'
 Plugin 'jtratner/vim-flavored-markdown'
 Plugin 'derekwyatt/vim-scala'
+Plugin 'lervag/vimtex'
 
 
 
@@ -105,13 +105,6 @@ set wildignore+=*.o,*.obj,.git,.svn
 set wildignore+=*.png,*.jpg,*.jpeg,*.gif,*.mp3
 set wildignore+=*.sw?
 
-
-" vim-latex stuff
-" this one sets leader+x to compile with xelatex
-" function SetXeTex()
-  " let g:Tex_CompileRule_pdf = 'xelatex -src-specials -interaction=nonstopmode $*'
-" endfunction
-" map <Leader>lx :<C-U>call SetXeTex()<CR>
 
 
 
