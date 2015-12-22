@@ -48,13 +48,16 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-liquid'
 " Plugin 'PProvost/vim-markdown-jekyll'
-Plugin 'jtratner/vim-flavored-markdown'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'lervag/vimtex'
-
-
+Plugin 'itspriddle/vim-marked'
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
+Bundle 'tpope/vim-markdown'
+Bundle 'mikewest/vimroom'
 
 " All of your Plugins must be added before the following line
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 autocmd filetype python set expandtab
