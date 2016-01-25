@@ -34,7 +34,6 @@ Plugin 'gmarik/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'elzr/vim-json'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
@@ -42,7 +41,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-repeat'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'bling/vim-airline'
+" Plugin 'bling/vim-airline'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/syntastic'
@@ -53,8 +52,9 @@ Plugin 'lervag/vimtex'
 Plugin 'itspriddle/vim-marked'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
-Bundle 'tpope/vim-markdown'
-Bundle 'mikewest/vimroom'
+" Plugin 'tpope/vim-markdown'
+Plugin 'mikewest/vimroom'
+Plugin 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 
@@ -152,3 +152,4 @@ let g:syntastic_check_on_wq = 0
 
 " Sets folds to open at start
 set foldlevelstart=20
+let g:ycm_path_to_python_interpreter = '/usr/bin/python'
