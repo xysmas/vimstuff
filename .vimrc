@@ -135,6 +135,10 @@ set listchars=nbsp:¬,tab:»·,trail:·
 " Breaking lines with \[enter] without having to go to insert mode
 nmap <leader><cr> i<cr><Esc>
 
+" ctrl + e
+imap <c-e> <Esc>A
+imap <c-a> <Esc>I
+
 
 " options for airlinelet
 let g:airline_powerline_fonts = 1
@@ -153,3 +157,4 @@ let g:syntastic_check_on_wq = 0
 " Sets folds to open at start
 set foldlevelstart=20
 let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+
