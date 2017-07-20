@@ -40,7 +40,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-repeat'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'kien/rainbow_parentheses.vim'
+" Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'luochen1990/rainbow'
 " Plugin 'bling/vim-airline'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'Raimondi/delimitMate'
@@ -68,6 +69,7 @@ autocmd filetype python set smarttab
 " makes backspace work correctly
 set backspace=indent,eol,start
 
+let g:rainbow_active = 1 
 
 " Enable syntax-highlighting.
 if has("syntax")
@@ -80,10 +82,10 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 " runtime autoload/pathogen.vim
 " execute pathogen#infect('$HOME/vimstuff/bundle/{}')
 
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+" au VimEnter * RainbowParenthesesToggle
+" au Syntax * RainbowParenthesesLoadRound
+" au Syntax * RainbowParenthesesLoadSquare
+" au Syntax * RainbowParenthesesLoadBraces
 
 " Solarized stuff
 let g:solarized_termtrans = 1
@@ -156,5 +158,5 @@ let g:syntastic_check_on_wq = 0
 
 " Sets folds to open at start
 set foldlevelstart=20
-let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+let g:ycm_path_to_python_interpreter = '/Users/agonzales/anaconda3/bin/python'
 
