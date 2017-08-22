@@ -42,10 +42,12 @@ Plugin 'tpope/vim-repeat'
 Plugin 'altercation/vim-colors-solarized'
 " Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'luochen1990/rainbow'
-" Plugin 'bling/vim-airline'
+Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'Raimondi/delimitMate'
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
+Plugin 'w0rp/ale'
 Plugin 'tpope/vim-liquid'
 " Plugin 'PProvost/vim-markdown-jekyll'
 Plugin 'derekwyatt/vim-scala'
@@ -55,7 +57,8 @@ Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 " Plugin 'tpope/vim-markdown'
 Plugin 'mikewest/vimroom'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
+Plugin 'maralla/completor.vim'
 
 " All of your Plugins must be added before the following line
 
@@ -116,8 +119,6 @@ set wildignore+=*.sw?
 " huge timesaver
 nnoremap ; :
 "
-" for airline to show up at first open
-set laststatus=2
 "
 " quick switching between windows
 set wmw=0
@@ -142,13 +143,11 @@ imap <c-e> <Esc>A
 imap <c-a> <Esc>I
 
 
-" options for airlinelet
-let g:airline_powerline_fonts = 1
 " spelling
 setlocal spell spelllang=en_us
 
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
@@ -159,4 +158,18 @@ let g:syntastic_check_on_wq = 0
 " Sets folds to open at start
 set foldlevelstart=20
 let g:ycm_path_to_python_interpreter = '/Users/agonzales/anaconda3/bin/python'
+let g:completor_python_binary = '/Users/agonzales/anaconda3/bin/python'
 
+
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
+
+""""""""""""" Airline
+
+let g:airline_powerline_fonts = 1
+" for airline to show up at first open
+set laststatus=2
+" Set this. Airline will handle the rest.
+let g:airline#extensions#ale#enabled = 1
+let g:airline_solarized_bg='dark'
